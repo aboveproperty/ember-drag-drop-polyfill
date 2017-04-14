@@ -1,27 +1,45 @@
 # ember-drag-drop-polyfill
 
-This README outlines the details of collaborating on this Ember addon.
+This addon brings [drag-drop-polyfill](https://github.com/timruffles/ios-html5-drag-drop-shim) into your Ember applications to polyfill drag and drop events for mobile browsers.
 
-## Installation
+## Usage
 
-* `git clone <repository-url>` this repository
-* `cd ember-drag-drop-polyfill`
-* `npm install`
-* `bower install`
+```ember install ember-drag-drop-polyfill```
 
-## Running
+## Configuration
 
-* `ember serve`
-* Visit your app at [http://localhost:4200](http://localhost:4200).
+Configure what files are included in your build by modifying `ember-cli-build.js`.
 
-## Running Tests
+Example:
+```javascript
+// ember-cli-build.js
 
-* `npm test` (Runs `ember try:each` to test your addon against multiple Ember versions)
-* `ember test`
-* `ember test --server`
+var app = new EmberApp(defaults, {
+  // Add options here
 
-## Building
+  ["ember-drag-drop-polyfill"]: {
+    includeCSS: true,
+    includeIconsCss: false,
+    includeDebugCss: true,
+    includeScrollBehavior: false,
+  }
+});
+```
 
-* `ember build`
+Pass configuration options through to to [drag-drop-polyfill](https://github.com/timruffles/ios-html5-drag-drop-shim) by modifying `config/environment.js`.
 
-For more information on using ember-cli, visit [https://ember-cli.com/](https://ember-cli.com/).
+Example:
+```javascript
+// config/environment.js 
+var ENV = {
+
+  // ...
+
+  "ember-drag-drop-polyfill": {
+    enableEnterLeave: true,
+    holdToDrag: false
+  },
+  
+  // ...
+};
+```
