@@ -26,7 +26,7 @@ var app = new EmberApp(defaults, {
 });
 ```
 
-Pass configuration options through to to [drag-drop-polyfill](https://github.com/timruffles/ios-html5-drag-drop-shim) by modifying `config/environment.js`.
+Pass configuration options through to [drag-drop-polyfill](https://github.com/timruffles/ios-html5-drag-drop-shim) by modifying `config/environment.js`.
 
 Example:
 ```javascript
