@@ -1,4 +1,5 @@
 import config from 'ember-get-config';
+/* global DragDropPolyfill */
 
 export function initialize(/* application */) {
 

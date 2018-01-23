@@ -1,4 +1,6 @@
 {
   "name": "ember-drag-drop-polyfill",
-  "dependencies": {}
+  "dependencies": {
+    "drag-drop-polyfill": "2.0.0-beta.3"
+  }
 }
