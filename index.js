@@ -34,7 +34,6 @@ module.exports = {
 
     var options = (app && app.options && app.options["ember-drag-drop-polyfill"]) || {};
 
-    // Note: IE doesn't support Object.assign
     options = Object.assign(defaults, options);
 
     app.import({
