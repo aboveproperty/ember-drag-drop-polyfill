@@ -1,13 +1,10 @@
 import config from 'ember-get-config';
-/* global DragDropPolyfill */
+import { polyfill } from 'mobile-drag-drop';
 
 export function initialize(/* application */) {
 
-  let options = config["ember-drag-drop-polyfill"] || {};
-
-  if (typeof DragDropPolyfill !== 'undefined') {
-    DragDropPolyfill.Initialize(options);
-  }
+  let options = config['ember-drag-drop-polyfill'] || {};
+  polyfill(options);
 }
 
 export default {

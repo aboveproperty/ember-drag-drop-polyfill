@@ -29,8 +29,7 @@ module.exports = {
       includeCss: false,
       includeIconsCss: false,
       includeDebugCss: false,
-      includeScrollBehavior: false,
-      dependencyFolder: "/drag-drop-polyfill"
+      includeScrollBehavior: false
     };
 
     var options = (app && app.options && app.options["ember-drag-drop-polyfill"]) || {};
@@ -39,29 +38,46 @@ module.exports = {
     options = Object.assign(defaults, options);
 
     app.import({
-      development: app.bowerDirectory + options.dependencyFolder + '/release/drag-drop-polyfill.js',
-      production: app.bowerDirectory + options.dependencyFolder + '/release/drag-drop-polyfill.min.js'
+      development: 'vendor/mobile-drag-drop/index.js',
+      production: 'vendor/mobile-drag-drop/index.min.js'
+    }, {
+      using: [
+        { transformation: 'amd', as: 'mobile-drag-drop' }
+      ]
     });
 
     if (options.includeCss) {
-      app.import(app.bowerDirectory + options.dependencyFolder + '/release/drag-drop-polyfill.css');
+      app.import('vendor/mobile-drag-drop/default.css');
     }
 
     if (options.includeIconsCss) {
-      app.import(app.bowerDirectory + options.dependencyFolder + '/release/drag-drop-polyfill-icons.css');
+      app.import('vendor/mobile-drag-drop/icons.css');
     }
 
     if (options.includeDebugCss) {
-      app.import(app.bowerDirectory + '/' + options.dependencyFolder + '/release/drag-drop-polyfill-debug.css');
+      app.import('vendor/mobile-drag-drop/debug.css');
     }
 
     if (options.includeScrollBehavior) {
-      app.import({
-        development: app.bowerDirectory + '/' + options.dependencyFolder + '/release/drag-drop-polyfill-scroll-behaviour.js',
-        production: app.bowerDirectory + '/' + options.dependencyFolder + '/release/drag-drop-polyfill-scroll-behaviour.js'
-      });
+      app.import('vendor/mobile-drag-drop/scroll-behaviour.js');
     }
 
     return app;
+  },
+  options: {
+    nodeAssets: {
+      'mobile-drag-drop': {
+        vendor: {
+          includes: [
+            'debug.css',
+            'default.css',
+            'icons.css',
+            'index.js',
+            'index.min.js',
+            'scroll-behaviour.js'
+          ]
+        }
+      }
+    }
   }
 };
