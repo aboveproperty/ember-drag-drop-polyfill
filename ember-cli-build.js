@@ -1,10 +1,26 @@
-/*jshint node:true*/
-/* global require, module */
-var EmberAddon = require('ember-cli/lib/broccoli/ember-addon');
+/* eslint-env node */
+'use strict';
+
+const EmberAddon = require('ember-cli/lib/broccoli/ember-addon');
 
 module.exports = function(defaults) {
-  var app = new EmberAddon(defaults, {
-    // Add options here
+  let app = new EmberAddon(defaults, {
+    // nodeAssets must be the same as in index.js. It's only used for dummy app.
+    // https://github.com/dfreeman/ember-cli-node-assets#for-addons
+    nodeAssets: {
+      'mobile-drag-drop': {
+        vendor: {
+          includes: [
+            'debug.css',
+            'default.css',
+            'icons.css',
+            'index.js',
+            'index.min.js',
+            'scroll-behaviour.js'
+          ]
+        }
+      }
+    }
   });
 
   /*

@@ -16,6 +16,6 @@ module.exports = {
   // }
 
   afterInstall(/* options */) {
-    return this.addBowerPackageToProject('drag-drop-polyfill', '2.0.0-beta.3');
+    return this.addPackageToProject('mobile-drag-drop', '^2.2.0');
   }
 };
