@@ -1,4 +1,6 @@
 # ember-drag-drop-polyfill
+[![Build Status](https://travis-ci.org/aboveproperty/ember-drag-drop-polyfill.svg?branch=master)](https://travis-ci.org/aboveproperty/ember-drag-drop-polyfill)
+[![npm version](https://badge.fury.io/js/ember-drag-drop-polyfill.svg)](http://badge.fury.io/js/ember-drag-drop-polyfill)
 
 This addon brings [drag-drop-polyfill](https://github.com/timruffles/ios-html5-drag-drop-shim) into your Ember applications to polyfill drag and drop events for mobile browsers.
 
