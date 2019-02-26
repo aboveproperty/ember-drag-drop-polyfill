@@ -1,12 +1,5 @@
 'use strict';
 
-try {
-  var stew = require('broccoli-stew');
-  var log = stew.log;
-} catch (er) {
-  log = null;
-}
-
 module.exports = {
   name: require('./package').name,
 
