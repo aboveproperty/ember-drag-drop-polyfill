@@ -8,6 +8,10 @@ This addon brings [drag-drop-polyfill](https://github.com/timruffles/ios-html5-d
 
 ```ember install ember-drag-drop-polyfill```
 
+For versions of Ember CLI < 2.15, 
+
+```ember install ember-drag-drop-polyfill@0.1.0```
+
 ## Configuration
 
 Configure what files are included in your build by modifying `ember-cli-build.js`.
