@@ -1,4 +1,3 @@
-/* eslint-env node */
 'use strict';
 
 try {
@@ -9,7 +8,7 @@ try {
 }
 
 module.exports = {
-  name: 'ember-drag-drop-polyfill',
+  name: require('./package').name,
 
   // isDevelopingAddon() {
   //   return true;
