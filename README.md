@@ -31,7 +31,7 @@ Example:
 var app = new EmberApp(defaults, {
   // Add options here
 
-  ["ember-drag-drop-polyfill"]: {
+  "ember-drag-drop-polyfill": {
     includeCSS: true,
     includeIconsCss: false,
     includeDebugCss: true,
@@ -40,7 +40,7 @@ var app = new EmberApp(defaults, {
 });
 ```
 
-Pass configuration options through to [drag-drop-polyfill](https://github.com/timruffles/ios-html5-drag-drop-shim) by modifying `config/environment.js`.
+Pass configuration options through to [mobile-drag-drop](https://github.com/timruffles/mobile-drag-drop) by modifying `config/environment.js`.
 
 Example:
 ```javascript
