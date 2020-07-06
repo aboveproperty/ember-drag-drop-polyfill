@@ -10,6 +10,7 @@ export function initialize(/* application */) {
 
   if (options.includeScrollBehavior) {
     options.dragImageTranslateOverride = scrollBehaviourDragImageTranslateOverride;
+    window.addEventListener('touchmove', function() {});
   }
 
   polyfill(options);
