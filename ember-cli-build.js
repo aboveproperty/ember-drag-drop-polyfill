@@ -15,7 +15,8 @@ module.exports = function(defaults) {
             'icons.css',
             'index.js',
             'index.min.js',
-            'scroll-behaviour.js'
+            'scroll-behaviour.js',
+            'scroll-behavior.min.js'
           ]
         }
       }
