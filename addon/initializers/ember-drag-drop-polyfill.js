@@ -9,24 +9,25 @@ export function initialize(/* application */) {
 
   try {
     const opts = {
-      get passive() { // This function will be called when the browser
-        //   attempts to access the passive property.
+      // This function will be called when the browser attempts to access the passive property.
+      get passive() {
         passiveSupported = true;
         return false;
       }
     };
 
-    window.addEventListener("test", null, opts);
-    window.removeEventListener("test", null, opts);
+    window.addEventListener('test', null, opts);
+    window.removeEventListener('test', null, opts);
   } catch (err) {
     passiveSupported = false;
   }
 
-  let options = config['ember-drag-drop-polyfill'] || {};
+  const options = config['ember-drag-drop-polyfill'] || {};
+  const customOptions = options.customOptions || {};
+  const mobileDragDropOptions = options.mobileDragDrop || {};
 
-  if (options.includeScrollBehavior) {
-    options.dragImageTranslateOverride = scrollBehaviourDragImageTranslateOverride;
-
+  // see https://github.com/timruffles/mobile-drag-drop/issues/77
+  if (customOptions.enableIOSHack) {
     if (passiveSupported) {
       window.addEventListener('touchmove', function() {}, { passive: false });
     } else {
@@ -34,7 +35,11 @@ export function initialize(/* application */) {
     }
   }
 
-  polyfill(options);
+  if (customOptions.includeScrollBehavior) {
+    mobileDragDropOptions.dragImageTranslateOverride = scrollBehaviourDragImageTranslateOverride;
+  }
+
+  polyfill(mobileDragDropOptions);
 }
 
 export default {
