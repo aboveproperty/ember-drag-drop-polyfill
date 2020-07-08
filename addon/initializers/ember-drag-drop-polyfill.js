@@ -1,10 +1,7 @@
 import config from 'ember-get-config';
 import { polyfill } from 'mobile-drag-drop';
 
-// optional import of scroll behaviour
-import { scrollBehaviourDragImageTranslateOverride } from 'mobile-drag-drop/scroll-behaviour';
-
-export function initialize(/* application */) {
+export function initialize(application) {
   let passiveSupported = false;
 
   try {
@@ -36,7 +33,14 @@ export function initialize(/* application */) {
   }
 
   if (customOptions.includeScrollBehavior) {
-    mobileDragDropOptions.dragImageTranslateOverride = scrollBehaviourDragImageTranslateOverride;
+
+    application.deferReadiness();
+
+    // optional import of scroll behaviour
+    import('mobile-drag-drop/scroll-behaviour').then(module => {
+      mobileDragDropOptions.dragImageTranslateOverride = module.scrollBehaviourDragImageTranslateOverride;
+      application.advanceReadiness();
+    });
   }
 
   polyfill(mobileDragDropOptions);

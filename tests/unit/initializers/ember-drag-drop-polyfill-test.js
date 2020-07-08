@@ -2,23 +2,30 @@ import Application from '@ember/application';
 
 import { initialize } from 'dummy/initializers/ember-drag-drop-polyfill';
 import { module, test } from 'qunit';
+import { setupTest } from 'ember-qunit';
 import { run } from '@ember/runloop';
 
-let application;
-
 module('Unit | Initializer | ember-drag-drop-polyfill', function(hooks) {
+  setupTest(hooks);
+
   hooks.beforeEach(function() {
-    run(function() {
-      application = Application.create();
-      application.deferReadiness();
+    this.TestApplication = Application.extend();
+    this.TestApplication.initializer({
+      name: 'initializer under test',
+      initialize
     });
+
+    this.application = this.TestApplication.create({ autoboot: false });
+  });
+
+  hooks.afterEach(function() {
+    run(this.application, 'destroy');
   });
 
   // Replace this with your real tests.
-  test('it works', function(assert) {
-    initialize(application);
+  test('it works', async function(assert) {
+    await this.application.boot();
 
-    // you would normally confirm the results of the initializer here
     assert.ok(true);
   });
 });
