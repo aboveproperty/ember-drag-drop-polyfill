@@ -1,7 +1,9 @@
 import config from 'ember-get-config';
 import { polyfill } from 'mobile-drag-drop';
 
-export function initialize(application) {
+import { scrollBehaviourDragImageTranslateOverride } from 'mobile-drag-drop/scroll-behaviour';
+
+export function initialize(/*application*/) {
   const options = config['ember-drag-drop-polyfill'] || {};
   const customOptions = options.customOptions || {};
   const mobileDragDropOptions = options.mobileDragDrop || {};
@@ -33,15 +35,7 @@ export function initialize(application) {
   }
 
   if (customOptions.includeScrollBehavior) {
-
-    application.deferReadiness();
-
-    // optional import of scroll behaviour
-    import('mobile-drag-drop/scroll-behaviour').then(module => {
-      mobileDragDropOptions.dragImageTranslateOverride = module.scrollBehaviourDragImageTranslateOverride;
-    }).finally(() => {
-      application.advanceReadiness();
-    });
+    mobileDragDropOptions.dragImageTranslateOverride = scrollBehaviourDragImageTranslateOverride;
   }
 
   polyfill(mobileDragDropOptions);

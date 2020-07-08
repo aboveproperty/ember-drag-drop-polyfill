@@ -40,8 +40,7 @@ var app = new EmberApp(defaults, {
   "ember-drag-drop-polyfill": {
     includeCSS: true,
     includeIconsCss: false,
-    includeDebugCss: true,
-    includeScrollBehavior: false
+    includeDebugCss: true
   }
 });
 ```
@@ -64,8 +63,8 @@ var ENV = {
     // These options are used by ember-drag-drop-polyfill
     customOptions: {
       enableIOSHack: true, // Enable if targeting iOS Safari 10.x and higher, see https://github.com/timruffles/mobile-drag-drop/issues/77
-      includeScrollBehavior: true // Sets the 'dragImageTranslateOverride' option in mobile-drag-drop with the scroll behavior imported from the includeScrollBehavior option in ember-cli-build.js.
-    }                             // includeScrollBehavior must also be true in ember-cli-build.js to enable this
+      includeScrollBehavior: true // Sets the 'dragImageTranslateOverride' option in mobile-drag-drop
+    }
   },
   
   // ...
