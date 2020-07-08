@@ -13,6 +13,13 @@ Compatibility
 * Ember CLI v2.13 or above
 * Node.js v8 or above
 
+| Ember version | ember-drag-drop-polyfill version |
+|---------------|----------------------------------|
+| \>= 3.4       | 3.0.0                            |
+| \>= 2.18      | 2.0.0                            |
+| < 2.18        | 1.0.0                            |
+
+
 Installation
 ------------------------------------------------------------------------------
 
