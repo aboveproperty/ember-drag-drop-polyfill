@@ -39,6 +39,7 @@ export function initialize(application) {
     // optional import of scroll behaviour
     import('mobile-drag-drop/scroll-behaviour').then(module => {
       mobileDragDropOptions.dragImageTranslateOverride = module.scrollBehaviourDragImageTranslateOverride;
+    }).finally(() => {
       application.advanceReadiness();
     });
   }
