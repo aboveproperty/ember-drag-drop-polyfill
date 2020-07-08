@@ -5,10 +5,6 @@ const EmberAddon = require('ember-cli/lib/broccoli/ember-addon');
 module.exports = function(defaults) {
   let app = new EmberAddon(defaults, {
 
-    babel: {
-      plugins: [ require.resolve('ember-auto-import/babel-plugin') ]
-    },
-
     // nodeAssets must be the same as in index.js. It's only used for dummy app.
     // https://github.com/dfreeman/ember-cli-node-assets#for-addons
     nodeAssets: {
