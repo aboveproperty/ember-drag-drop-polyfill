@@ -24,7 +24,7 @@ module.exports = {
       includeScrollBehavior: false
     };
 
-    var options = (app && app.options && app.options["ember-drag-drop-polyfill"]) || {};
+    var options = (app && app.options && app.options['ember-drag-drop-polyfill']) || {};
 
     options = Object.assign(defaults, options);
 
@@ -50,7 +50,14 @@ module.exports = {
     }
 
     if (options.includeScrollBehavior) {
-      app.import('vendor/mobile-drag-drop/scroll-behaviour.js');
+      app.import({
+        development: 'vendor/mobile-drag-drop/scroll-behaviour.js',
+        production: 'vendor/mobile-drag-drop/scroll-behaviour.min.js'
+      }, {
+        using: [
+          { transformation: 'amd', as: 'mobile-drag-drop/scroll-behaviour' }
+        ]
+      });
     }
 
     return app;
@@ -65,7 +72,8 @@ module.exports = {
             'icons.css',
             'index.js',
             'index.min.js',
-            'scroll-behaviour.js'
+            'scroll-behaviour.js',
+            'scroll-behavior.min.js'
           ]
         }
       }
