@@ -6,6 +6,12 @@ ember-drag-drop-polyfill
 
 This addon brings [mobile-drag-drop](https://github.com/timruffles/mobile-drag-drop) into your Ember applications to polyfill drag and drop events for mobile browsers.
 
+Compatibility
+------------------------------------------------------------------------------
+
+* Ember.js v2.18 or above
+* Ember CLI v2.13 or above
+
 Installation
 ------------------------------------------------------------------------------
 
@@ -65,6 +71,12 @@ var ENV = {
   // ...
 };
 ```
+
+Contributing
+------------------------------------------------------------------------------
+
+See the [Contributing](CONTRIBUTING.md) guide for details.
+
 
 License
 ------------------------------------------------------------------------------
