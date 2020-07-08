@@ -17,20 +17,14 @@ Compatibility
 |---------------|----------------------------------|
 | \>= 3.4       | 3.0.0                            |
 | \>= 2.18      | 2.0.0                            |
-| < 2.18        | 1.0.0                            |
-
+| \>= 2.15      | 1.0.0                            |
+| < 2.15        | 0.1.0                            |
 
 Installation
 ------------------------------------------------------------------------------
 
 ```
 ember install ember-drag-drop-polyfill
-```
-
-For versions of Ember CLI < 2.15, 
-
-```
-ember install ember-drag-drop-polyfill@0.1.0
 ```
 
 Usage
