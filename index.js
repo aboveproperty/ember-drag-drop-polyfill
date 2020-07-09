@@ -49,16 +49,14 @@ module.exports = {
       app.import('vendor/mobile-drag-drop/debug.css');
     }
 
-    if (options.includeScrollBehavior) {
-      app.import({
-        development: 'vendor/mobile-drag-drop/scroll-behaviour.js',
-        production: 'vendor/mobile-drag-drop/scroll-behaviour.min.js'
-      }, {
-        using: [
-          { transformation: 'amd', as: 'mobile-drag-drop/scroll-behaviour' }
-        ]
-      });
-    }
+    app.import({
+      development: 'vendor/mobile-drag-drop/scroll-behaviour.js',
+      production: 'vendor/mobile-drag-drop/scroll-behaviour.min.js'
+    }, {
+      using: [
+        { transformation: 'amd', as: 'mobile-drag-drop/scroll-behaviour' }
+      ]
+    });
 
     return app;
   },
