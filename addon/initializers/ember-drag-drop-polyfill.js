@@ -1,12 +1,15 @@
 import config from 'ember-get-config';
 import { polyfill } from 'mobile-drag-drop';
-
 import { scrollBehaviourDragImageTranslateOverride } from 'mobile-drag-drop/scroll-behaviour';
 
 export function initialize(/*application*/) {
   const options = config['ember-drag-drop-polyfill'] || {};
   const customOptions = options.customOptions || {};
   const mobileDragDropOptions = options.mobileDragDrop || {};
+
+  if (typeof document === 'undefined' || typeof window === 'undefined') {
+    return;
+  }
 
   // see https://github.com/timruffles/mobile-drag-drop/issues/77
   if (customOptions.enableIOSHack) {
