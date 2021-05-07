@@ -23,18 +23,25 @@ module.exports = {
       includeDebugCss: false,
     };
 
-    var options = (app && app.options && app.options['ember-drag-drop-polyfill']) || {};
+    var options =
+      (app && app.options && app.options['ember-drag-drop-polyfill']) || {};
 
     options = Object.assign(defaults, options);
 
-    app.import({
-      development: 'vendor/mobile-drag-drop/index.js',
-      production: 'vendor/mobile-drag-drop/index.min.js'
-    }, {
-      using: [
-        { transformation: 'amd', as: 'mobile-drag-drop' }
-      ]
-    });
+    app.import(
+      {
+        development: 'vendor/mobile-drag-drop/index.js',
+        production: 'vendor/mobile-drag-drop/index.min.js',
+      },
+      {
+        using: [
+          {
+            transformation: 'amd',
+            as: 'mobile-drag-drop',
+          },
+        ],
+      }
+    );
 
     if (options.includeCss) {
       app.import('vendor/mobile-drag-drop/default.css');
@@ -48,14 +55,17 @@ module.exports = {
       app.import('vendor/mobile-drag-drop/debug.css');
     }
 
-    app.import({
-      development: 'vendor/mobile-drag-drop/scroll-behaviour.js',
-      production: 'vendor/mobile-drag-drop/scroll-behaviour.min.js'
-    }, {
-      using: [
-        { transformation: 'amd', as: 'mobile-drag-drop/scroll-behaviour' }
-      ]
-    });
+    app.import(
+      {
+        development: 'vendor/mobile-drag-drop/scroll-behaviour.js',
+        production: 'vendor/mobile-drag-drop/scroll-behaviour.min.js',
+      },
+      {
+        using: [
+          { transformation: 'amd', as: 'mobile-drag-drop/scroll-behaviour' },
+        ],
+      }
+    );
 
     return app;
   },
@@ -70,10 +80,10 @@ module.exports = {
             'index.js',
             'index.min.js',
             'scroll-behaviour.js',
-            'scroll-behavior.min.js'
-          ]
-        }
-      }
-    }
-  }
+            'scroll-behavior.min.js',
+          ],
+        },
+      },
+    },
+  },
 };

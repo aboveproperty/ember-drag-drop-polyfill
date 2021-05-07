@@ -4,7 +4,6 @@ const EmberAddon = require('ember-cli/lib/broccoli/ember-addon');
 
 module.exports = function (defaults) {
   let app = new EmberAddon(defaults, {
-
     // nodeAssets must be the same as in index.js. It's only used for dummy app.
     // https://github.com/dfreeman/ember-cli-node-assets#for-addons
     nodeAssets: {
@@ -17,11 +16,11 @@ module.exports = function (defaults) {
             'index.js',
             'index.min.js',
             'scroll-behaviour.js',
-            'scroll-behavior.min.js'
-          ]
-        }
-      }
-    }
+            'scroll-behavior.min.js',
+          ],
+        },
+      },
+    },
   });
 
   /*

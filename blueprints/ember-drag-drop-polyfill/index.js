@@ -2,7 +2,7 @@
 module.exports = {
   description: '',
 
-  normalizeEntityName: function() {}, // no-op since we're just adding dependencies
+  normalizeEntityName: function () {}, // no-op since we're just adding dependencies
 
   // locals: function(options) {
   //   // Return custom template variables here.
@@ -17,5 +17,5 @@ module.exports = {
 
   afterInstall(/* options */) {
     return this.addPackageToProject('mobile-drag-drop', '^2.2.0');
-  }
+  },
 };

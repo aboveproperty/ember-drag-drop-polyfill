@@ -21,7 +21,7 @@ export function initialize(/*application*/) {
         get passive() {
           passiveSupported = true;
           return false;
-        }
+        },
       };
 
       window.addEventListener('test', null, opts);
@@ -31,9 +31,9 @@ export function initialize(/*application*/) {
     }
 
     if (passiveSupported) {
-      window.addEventListener('touchmove', function() {}, { passive: false });
+      window.addEventListener('touchmove', function () {}, { passive: false });
     } else {
-      window.addEventListener('touchmove', function() {});
+      window.addEventListener('touchmove', function () {});
     }
   }
 
@@ -46,5 +46,5 @@ export function initialize(/*application*/) {
 
 export default {
   name: 'ember-drag-drop-polyfill',
-  initialize
+  initialize,
 };
