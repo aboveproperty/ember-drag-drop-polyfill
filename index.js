@@ -30,8 +30,8 @@ module.exports = {
 
     app.import(
       {
-        development: 'vendor/mobile-drag-drop/index.js',
-        production: 'vendor/mobile-drag-drop/index.min.js',
+        development: 'node_modules/mobile-drag-drop/index.js',
+        production: 'node_modules/mobile-drag-drop/index.min.js',
       },
       {
         using: [
@@ -44,21 +44,21 @@ module.exports = {
     );
 
     if (options.includeCss) {
-      app.import('vendor/mobile-drag-drop/default.css');
+      app.import('node_modules/mobile-drag-drop/default.css');
     }
 
     if (options.includeIconsCss) {
-      app.import('vendor/mobile-drag-drop/icons.css');
+      app.import('node_modules/mobile-drag-drop/icons.css');
     }
 
     if (options.includeDebugCss) {
-      app.import('vendor/mobile-drag-drop/debug.css');
+      app.import('node_modules/mobile-drag-drop/debug.css');
     }
 
     app.import(
       {
-        development: 'vendor/mobile-drag-drop/scroll-behaviour.js',
-        production: 'vendor/mobile-drag-drop/scroll-behaviour.min.js',
+        development: 'node_modules/mobile-drag-drop/scroll-behaviour.js',
+        production: 'node_modules/mobile-drag-drop/scroll-behaviour.min.js',
       },
       {
         using: [
@@ -69,21 +69,5 @@ module.exports = {
 
     return app;
   },
-  options: {
-    nodeAssets: {
-      'mobile-drag-drop': {
-        vendor: {
-          includes: [
-            'debug.css',
-            'default.css',
-            'icons.css',
-            'index.js',
-            'index.min.js',
-            'scroll-behaviour.js',
-            'scroll-behavior.min.js',
-          ],
-        },
-      },
-    },
-  },
+  options: {},
 };

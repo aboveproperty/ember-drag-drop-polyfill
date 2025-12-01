@@ -38,7 +38,8 @@ export function initialize(/*application*/) {
   }
 
   if (customOptions.includeScrollBehavior) {
-    mobileDragDropOptions.dragImageTranslateOverride = scrollBehaviourDragImageTranslateOverride;
+    mobileDragDropOptions.dragImageTranslateOverride =
+      scrollBehaviourDragImageTranslateOverride;
   }
 
   polyfill(mobileDragDropOptions);
