@@ -24,6 +24,8 @@ jobs:
         with:
           node-version: 14.x
           cache: npm
+      - name: Upgrade npm
+        run: npm install -g npm@11
       - name: Install Dependencies
         run: npm ci
       - name: Lint
@@ -42,6 +44,8 @@ jobs:
         with:
           node-version: 14.x
           cache: npm
+      - name: Upgrade npm
+        run: npm install -g npm@11
       - name: Install Dependencies
         run: npm install --no-shrinkwrap
       - name: Run Tests
@@ -73,6 +77,8 @@ jobs:
         with:
           node-version: 14.x
           cache: npm
+      - name: Upgrade npm
+        run: npm install -g npm@11
       - name: Install Dependencies
         run: npm ci
       - name: Run Tests
